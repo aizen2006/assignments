@@ -5,7 +5,9 @@
 */
 
 function isAnagram(str1, str2) {
-
+  const SortedStr1= str1.split('').sort().join('');
+  const SortedStr2= str2.split('').sort().join('');
+  return SortedStr1 === SortedStr2;
 }
 
 module.exports = isAnagram;
