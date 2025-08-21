@@ -5,8 +5,10 @@
 */
 
 function isAnagram(str1, str2) {
-  const SortedStr1= str1.split('').sort().join('');
-  const SortedStr2= str2.split('').sort().join('');
+  // normalize the irregularity
+  const Normalize = str => str.toLowerCase().replace(/[^a-z]/g , "" )
+  const SortedStr1= Normalize(str1).split('').sort().join('');
+  const SortedStr2= Normalize(str2).split('').sort().join('');
   return SortedStr1 === SortedStr2;
 }
 
